@@ -1,0 +1,4 @@
+[default]
+bucket_location = ru-1
+host_base = s3.storage.selcloud.ru
+host_bucket = s3.storage.selcloud.ru
