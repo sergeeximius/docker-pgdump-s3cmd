@@ -34,6 +34,6 @@ echo "secret_key = ${S3_SECRET_KEY}" >> ~/.s3cfg
 
 PGPASSWORD=${DB_PASS} pg_dump --host=${DB_HOST} --username=${DB_USER} ${DB_NAME} > /${DB_NAME}_${POSTFIX}
 gzip /${DB_NAME}_${POSTFIX}
-s3cmd --storage-class COLD put /${DB_NAME}_${POSTFIX} s3://${S3_BACKET}/${S3_PATH}/${S3_NAME_PREFIX}${DB_NAME}_${POSTFIX}
+s3cmd --storage-class COLD put /${DB_NAME}_${POSTFIX}.gz s3://${S3_BACKET}/${S3_PATH}/${S3_NAME_PREFIX}${DB_NAME}_${POSTFIX}.gz
 
 exec "$@"
